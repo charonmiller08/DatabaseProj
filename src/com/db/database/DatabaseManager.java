@@ -19,8 +19,8 @@ public class DatabaseManager {
 	
 
 	// Put your oracle ID and password here
-	private static final String user = "jlschuma";
-	private static final String password = "test123";
+	private static final String user = "bijohnso";
+	private static final String password = "brittchels1";
 
 	private static Connection connection = null;
 	private static Statement statement = null;
@@ -56,6 +56,11 @@ public class DatabaseManager {
 				{
 					stat.setString(i, arg.getValue().toString());
 					///sql = sql.replaceFirst(Pattern.quote("?"), "'"+arg.getValue().toString()+"'");
+				}
+				else if (arg.getType().equals("Float")) 
+				{
+					stat.setFloat(i, Float.parseFloat(arg.getValue().toString()));
+					
 				}
 				else if (arg.getType().equals("Date"))
 				{
